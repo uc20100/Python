@@ -7,7 +7,7 @@
 def test_bool(x, y, z):
     max_len = max(len(f'{x:0b}'),len(f'{y:0b}'),len(f'{z:0b}'))
     mask = 2**max_len-1
-    value1 = ~(x|y|z) & (2**max_len-1)
+    value1 = ~(x|y|z) & mask
     print(f'¬(x ⋁ y ⋁ z) -> ¬({x:0{max_len}b} ⋁ {y:0{max_len}b} ⋁ {z:0{max_len}b}) = {value1:0{max_len}b}')
     value2 = ~x & ~y & ~z & mask
     print(f'¬(x) ⋀ ¬(y) ⋀ ¬(z) -> {(~x&mask):0{max_len}b} ⋀ {(~y&mask):0{max_len}b} ⋀ {(~z&mask):0{max_len}b} = {value2:0{max_len}b}')
