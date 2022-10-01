@@ -20,5 +20,5 @@ while console_string.isdigit() == False:
     print('Введённые символы не являются натуральным числом')
     console_string = input('Введите число: ')
 
-print(fibonacci_list(int(console_string)))
+print(f'Список Фибоначчи: {fibonacci_list(int(console_string))}')
 
