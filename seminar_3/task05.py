@@ -5,13 +5,13 @@
 # out >> 2 -1 1 0 1 1 2
 
 def fibonacci_list (value):
-    result = [i for i in range(-value, value+1)]
-    result[result.index(0)-1] = 1
-    for i in range(result.index(0)+2, len(result), 1):
-        result[i] = result[i-1] + result[i-2]
-    for i in range(result.index(0)-2, -1, -1):
-        result[i] = result[i+2] - result[i+1]    
-    return result 
+    result_out = [i for i in range(-value, value+1)]
+    result_out[result_out.index(0)-1] = 1
+    for i in range(result_out.index(0)+2, len(result_out), 1):
+        result_out[i] = result_out[i-1] + result_out[i-2]
+    for i in range(result_out.index(0)-2, -1, -1):
+        result_out[i] = result_out[i+2] - result_out[i+1]    
+    return result_out 
 
 
 
