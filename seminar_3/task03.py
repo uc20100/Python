@@ -11,14 +11,14 @@ def decimal_to_binary (value):
     BASE_NUMBER_OUT = 10
 
     count = 0
-    result = 0
+    result_out = 0
     while value//BASE_NUMBER_CONVERT > 0:
-        result += (value%BASE_NUMBER_CONVERT)*BASE_NUMBER_OUT**(count)
+        result_out += (value%BASE_NUMBER_CONVERT)*BASE_NUMBER_OUT**(count)
         value //= BASE_NUMBER_CONVERT
         count += 1
     else:
-        result += value * BASE_NUMBER_OUT**(count)
-        return result 
+        result_out += value * BASE_NUMBER_OUT**(count)
+        return result_out 
 
 
 string_input = input('Введите десятичное число: ')
