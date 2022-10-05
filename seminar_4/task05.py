@@ -69,10 +69,10 @@ with open("poly_2.txt", "r") as file_poly_2:
 # записываем сумму многочленов в файл и выводим её на экран 
 with open('sum_poly.txt', 'w') as file:
     for i in range(min(len(lines_poly), len(lines_poly_2))):
-        print(f'poly.txt     -> {lines_poly[i]}')
-        print(f'poly_2.txt   -> {lines_poly_2[i]}')
+        print(f'poly.txt      -> {lines_poly[i]}')
+        print(f'poly_2.txt    -> {lines_poly_2[i]}')
         sum_poly = sum_polynomial(lines_poly[i], lines_poly_2[i])
-        print(f'poly + poly_2 = {sum_poly}')
+        print(f'poly + poly_2 -> {sum_poly}')
         print('')
         file.write(sum_poly + '\n')
 
