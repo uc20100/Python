@@ -7,7 +7,7 @@
 def sum_polynomial(value_1: str, value_2: str):
     NO_VALUE = ''
     result_list = []
-    result_out = ''
+    result_out = NO_VALUE
     value_1 = value_1.replace('+','$+').replace('-','$-').replace('=','$=$').replace(' ', '')
     value_2 = value_2.replace('+','$+').replace('-','$-').replace('=','$=$').replace(' ', '')
     polynomial_string = (f'{value_1}${value_2}')
@@ -26,7 +26,7 @@ def sum_polynomial(value_1: str, value_2: str):
             result_list.append(f'{ratio_polynomial}*{type_polynomial}')    
         else:
             if polynomial_list[i].find('=')<0 and polynomial_list[i] != NO_VALUE:
-                if polynomial_list[i-1] == '=' or (polynomial_list[i-2] == '=' and polynomial_list[i-1] == ''):
+                if polynomial_list[i-1] == '=' or (polynomial_list[i-2] == '=' and polynomial_list[i-1] == NO_VALUE):
                     number_value -= int(polynomial_list[i])
                 else:
                     number_value += int(polynomial_list[i])
