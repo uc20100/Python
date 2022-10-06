@@ -26,7 +26,11 @@ def sum_polynomial(value_1: str, value_2: str):
             result_list.append(f'{ratio_polynomial}*{type_polynomial}')    
         else:
             if polynomial_list[i].find('=')<0 and polynomial_list[i] != NO_VALUE:
-                number_value += int(polynomial_list[i])
+                if polynomial_list[i-1] == '=' or (polynomial_list[i-2] == '=' and polynomial_list[i-1] == ''):
+                    number_value -= int(polynomial_list[i])
+                else:
+                    number_value += int(polynomial_list[i])
+
     result_list.append(f'{number_value}')
 
     for i in range(len(result_list)):
@@ -46,13 +50,13 @@ def sum_polynomial(value_1: str, value_2: str):
 # Заполняем файл записями 
 with open("poly.txt", "w") as file:
     file.write('3*x^9 + 3*x^8 - 2*x^6 + 1*x^5 - 3*x^4 - 3*x^2 + 3 + 2*x^2 + 2*x^1 + 2 = 0' + '\n')
-    file.write('-3*x^2 + 10 + 3*x^2 + 1*x^1 = 0' + '\n')
+    file.write('-3*x^2 - 10 + 3*x^2 + 1*x^1 = 2' + '\n')
     file.write('3*x^9 + 3*x^8 - 2 = 0' + '\n')
 
 # Заполняем файл записями 
 with open("poly_2.txt", "w") as file:
     file.write('3*x^9 + 3*x^8 - 2*x^6 + 1*x^5 - 3*x^4 - 3*x^2 + 3 + 2*x^2 + 2*x^1 + 25 = 0' + '\n')   
-    file.write('3*x^9 + 3*x^8 + 2 = 0' + '\n')
+    file.write('3*x^9 + 3*x^8 + 2 = -1' + '\n')
     file.write('3 + 2*x^2 + 2*x^1 = 0' + '\n')
 
 
