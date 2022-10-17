@@ -41,14 +41,13 @@ def view_request(value: list):
     """
     Показывает все записи в соответствии с введенными параметрами
     :param value: список переменных (фамилия, имя, телефон, комментарий)
-    :return: OK_RETURN/ERROR_RETURN
     """
     request_list = dr.request_list(di.load_data_phone(),value)
     if len(request_list) == 0:
         vd.print_message('НИЧЕГО НЕ НАЙДЕНО')
     else:
         vd.print_data(request_list)
-    return di.OK_RETURN
+
 
 
 def del_request(value: list):
