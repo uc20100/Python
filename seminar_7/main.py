@@ -37,16 +37,13 @@ while True:
             vd.print_err()
     elif comm_list[0] == 'v':   # Просмотр записей
         comm_list.pop(0)
-        if ui.view_request(comm_list) == di.OK_RETURN:
-            vd.print_ok()
-        else:
-            vd.print_err()
-    elif comm_list[0] == 'init':
+        ui.view_request(comm_list)
+    elif comm_list[0] == 'init':    # Заполнение БД тестовыми записями
         if ui.init_data() == di.OK_RETURN:
             vd.print_ok()
         else:
             vd.print_err()
-    elif comm_list[0] == 'q':
+    elif comm_list[0] == 'q':   # Выход из программы
         break
     else:
         vd.print_message('ТАКОЙ КОМАНДЫ НЕТ')
