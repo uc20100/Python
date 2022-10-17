@@ -44,14 +44,11 @@ def view_request(value: list):
     :return: OK_RETURN/ERROR_RETURN
     """
     request_list = dr.request_list(di.load_data_phone(),value)
-    if request_list != di.ERROR_RETURN:
-        if len(request_list) == 0:
-            vd.print_message('НИЧЕГО НЕ НАЙДЕНО')
-        else:
-            vd.print_data(request_list)
-        return di.OK_RETURN
+    if len(request_list) == 0:
+        vd.print_message('НИЧЕГО НЕ НАЙДЕНО')
     else:
-        return di.ERROR_RETURN
+        vd.print_data(request_list)
+    return di.OK_RETURN
 
 
 def del_request(value: list):
@@ -62,14 +59,11 @@ def del_request(value: list):
     :return: OK_RETURN/ERROR_RETURN
     """
     request_list = dr.request_list(di.load_data_phone(),value)
-    if request_list != di.ERROR_RETURN:
-        if len(request_list) == 0:
-            vd.print_message('НИЧЕГО НЕ НАЙДЕНО')
-            return di.OK_RETURN
-        else:
-            vd.print_data(request_list)
+    if len(request_list) == 0:
+        vd.print_message('НИЧЕГО НЕ НАЙДЕНО')
+        return di.OK_RETURN
     else:
-        return di.ERROR_RETURN
+        vd.print_data(request_list)
     while True:
         del_number = int(input('Введите номер записи которую нужно удалить: '))
         if 1<=del_number<=len(request_list):
@@ -95,14 +89,11 @@ def edit_request(value: list):
     :return: OK_RETURN/ERROR_RETURN
     """
     request_list = dr.request_list(di.load_data_phone(),value)
-    if request_list != di.ERROR_RETURN:
-        if len(request_list) == 0:
-            vd.print_message('НИЧЕГО НЕ НАЙДЕНО')
-            return di.OK_RETURN
-        else:
-            vd.print_data(request_list)
+    if len(request_list) == 0:
+        vd.print_message('НИЧЕГО НЕ НАЙДЕНО')
+        return di.OK_RETURN
     else:
-        return di.ERROR_RETURN
+        vd.print_data(request_list)
     while True:
         edit_number = int(input('Введите номер записи которую нужно отредактировать: '))
         if 1<=edit_number<=len(request_list):
