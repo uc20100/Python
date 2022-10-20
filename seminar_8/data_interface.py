@@ -11,7 +11,7 @@ CSV_PATH = 'database.csv'   # расположение CSV файла
 ONE_RECORD_SIZE = 6         # отбрасывает данные если меньше этого значения
 
 
-def load_data(data_path=JSON_PATH, type_data=JSON_TYPE_DATA):
+def load_data(data_path=CSV_PATH, type_data=CSV_TYPE_DATA):
     """
     Загружает БД (id, фамилия, имя, должность, телефон, оклад), отфильтровывая 
     данные заполненные не по правилам 
